@@ -98,7 +98,7 @@ pipeline {
             stage('Sign release APK'){
                 steps {
                     withCredentials([
-                        file(credtialsId: 'android-keystore', variable: 'KEYSTORE_FILE'),
+                        file(credentialsId: 'android-keystore', variable: 'KEYSTORE_FILE'),
                         string(credentialsId: 'android-store-password', variable: 'KEYSTORE_PASSWORD'),
                         usernamePassword(credentialsId: 'android-key', usernameVariable: 'KEY_ALIAS',
                          passwordVariable: 'KEY_PASSWORD')

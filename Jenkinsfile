@@ -73,7 +73,7 @@ pipeline {
 
                 stage('Coverage') {
                     steps {
-                        bat 'powershell -NoProfile -ExecutionPolicy Bypass -File ci\\coverage-gate.ps1 -Report app/build/reports/coverage/test/debug/report.xml -Min 10'
+                        bat '"C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\powershell.exe" -NoProfile -ExecutionPolicy Bypass -File ci\\coverage-gate.ps1 -Report app/build/reports/coverage/test/debug/report.xml -Min 10'
                         recordCoverage(
                             tools: [[parser: 'JACOCO', pattern: 'app/build/reports/coverage/test/debug/report.xml']],
                             sourceCodeRetention: 'NEVER'
